@@ -7,7 +7,7 @@ import math
 
 from random import randint
 
-class ReferenceGraph(object):
+class FCGraph(object):
 	def __init__(self, inputFile):
 		self.graph = ig.Graph()
 		lines = [line.rstrip('\n') for line in open(inputFile)]
@@ -75,8 +75,8 @@ class ReferenceGraph(object):
 	
 		
 
-rg = ReferenceGraph("fcn.net")
-rg.cluster("fg.cfg", "lv.cfg", "wt.cfg", "im.cfg")
+fg = FCGraph("fcn.net")
+fg.cluster("fg.cfg", "lv.cfg", "wt.cfg", "im.cfg")
 print "OK"
 
 
