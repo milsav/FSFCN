@@ -26,7 +26,7 @@ public class InvokePythonScript {
 
 		System.out.println("Output:");
 		while ((line = br.readLine()) != null) {
-		  System.out.println(line);
+			System.out.println(line);
 		}
 	}
 }
