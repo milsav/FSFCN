@@ -10,7 +10,7 @@ import jsc.onesample.WilcoxonTest;
 import weka.core.Instances;
 
 /**
- * FCComparator: 10 runs of 10-cross-validation to compare FSFCN with 
+ * FSComparator: 10 runs of 10-cross-validation to compare FSFCN with 
  * other feature selection methods w.r.t. the accuracy of a given classifier
  * 
  * @author svc (svc@dmi.uns.ac.rs)

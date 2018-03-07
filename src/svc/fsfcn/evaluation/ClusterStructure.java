@@ -1,6 +1,8 @@
 package svc.fsfcn.evaluation;
 
 
+import java.io.IOException;
+
 import svc.fsfcn.Dataset;
 import svc.fsfcn.FCNetwork;
 import svc.fsfcn.FSFCN;
@@ -15,13 +17,13 @@ public class ClusterStructure {
 	private Dataset ds;
 	
 	public ClusterStructure(String dsName) 
-		throws Exception
+		throws IOException
 	{
 		ds = new NDataset(dsName);
 	}
 	
 	public void examine() 
-		throws Exception
+		throws IOException
 	{
 		double t = 0.0;
 		while (t <= 1.0) {

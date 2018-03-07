@@ -228,31 +228,31 @@ public class FSFCN {
 	}
 	
 	public ClusteringQuality wtQuality() 
-		throws Exception
+		throws IOException
 	{
 		return determineClusteringQuality(WT_INF);
 	}
 	
 	public ClusteringQuality fgQuality() 
-		throws Exception 
+		throws IOException
 	{
 		return determineClusteringQuality(FG_INF);
 	}
 	
 	public ClusteringQuality lvQuality() 
-		throws Exception
+		throws IOException
 	{
 		return determineClusteringQuality(LV_INF);
 	}
 	
 	public ClusteringQuality imQuality() 
-		throws Exception
+		throws IOException
 	{
 		return determineClusteringQuality(IM_INF);
 	}
 	
 	private ClusteringQuality determineClusteringQuality(String fileName) 
-		throws Exception
+		throws IOException
 	{
 		ClusteringQuality cq = new ClusteringQuality();
 		
