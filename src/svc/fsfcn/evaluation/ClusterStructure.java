@@ -4,7 +4,6 @@ package svc.fsfcn.evaluation;
 import svc.fsfcn.Dataset;
 import svc.fsfcn.FCNetwork;
 import svc.fsfcn.FSFCN;
-import svc.fsfcn.FSFCN.ClusteringQuality;
 import svc.fsfcn.NDataset;
 
 /**
@@ -35,11 +34,7 @@ public class ClusterStructure {
 			int numLinks = fcn.getGraph().getEdgeCount();
 			FSFCN f = new FSFCN(fcn);
 			f.selectFeatures();
-			
 			System.out.println(t + ", " + numNodes + ", " + numLinks + "," + f.wtQuality() + "," + f.fgQuality() + "," + f.lvQuality() + "," + f.imQuality());
-			
-			ClusteringQuality cc = f.imQuality();
-			System.out.println(t + "," + cc.q() + ", " + cc.numC() + "," + cc.RW() + "," + cc.RS() + "," + cc.intraw() + "," + cc.interw());
 			
 			t += 0.01;
 		}

@@ -98,12 +98,12 @@ public class FCNetwork {
 	public void info() {
 		double avgDeg = 2.0 * g.getEdgeCount() / (double) g.getVertexCount();
 		System.out.println(
-				"#nodes = " + g.getVertexCount() + 
-				", #links = " + g.getEdgeCount() + 
-				", avgdeg = " + avgDeg + 
-				", minR = " + minAttrCorrelation + 
-				", maxR = " + attributePairs.get(0).getR() + 
-				", maxAttrClassCorrelation = " + attribute[0].getClassCorrelation()
+			"#nodes = " + g.getVertexCount() + 
+			", #links = " + g.getEdgeCount() + 
+			", avgdeg = " + avgDeg + 
+			", minR = " + minAttrCorrelation + 
+			", maxR = " + attributePairs.get(0).getR() + 
+			", maxAttrClassCorrelation = " + attribute[0].getClassCorrelation()
 		);
 	}
 	

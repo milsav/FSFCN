@@ -60,11 +60,11 @@ public class FSComparator extends EvaluationBase {
 				for (int i = 0; i < 4; i++) {
 					fsfcn[i].addValue(fsfcnEval[i].getA());
 						
-						int attrSelected = fsfcnEval[i].getF();
-						ClassifierEvaluation[] rankingEval = evaluateRankingMethods(train, test, attrSelected);
-						for (int j = 0; j < rankingEval.length; j++) {
-							rank[i][j].addValue(rankingEval[j].getA());
-						}
+					int attrSelected = fsfcnEval[i].getF();
+					ClassifierEvaluation[] rankingEval = evaluateRankingMethods(train, test, attrSelected);
+					for (int j = 0; j < rankingEval.length; j++) {
+						rank[i][j].addValue(rankingEval[j].getA());
+					}
 				}
 			}
 		}

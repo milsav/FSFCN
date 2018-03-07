@@ -19,7 +19,7 @@ import jsc.independentsamples.MannWhitneyTest;
 
 /**
  * FSFCN -- feature selection based on feature correlation networks (main class)
- * Uses python igraph-based script for community detection
+ * The class uses the python igraph-based script for community detection
  * 
  * @author svc (svc@dmi.uns.ac.rs)
  */
@@ -212,9 +212,9 @@ public class FSFCN {
 			return q;
 		}
 		
-		public int numC() { return numClusters; }
-		public int RS()      { return numRS; }
-		public int RW()     { return numRW; }
+		public int numC()      { return numClusters; }
+		public int RS()        { return numRS; }
+		public int RW()        { return numRW; }
 		public double intraw() { return intraClusterLinksW; }
 		public double interw() { return interClusterLinksW; }
 		
@@ -274,7 +274,7 @@ public class FSFCN {
 			String[] toks = line.split(",");
 			if (toks.length != 3) {
 				br.close();
-				throw new IOException("[TUNINGERR, script output file format error] " + fileName + ", " + line);
+				throw new IOException("[ERR, script output file format error] " + fileName + ", " + line);
 			}
 				
 			String fName = toks[1];

@@ -58,7 +58,6 @@ public class TDataset extends Dataset {
 			}
 			
 			++noAttr;
-		}
-		
+		}		
 	}
 }

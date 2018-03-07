@@ -33,12 +33,12 @@ public class Dataset {
 	//
 	// data table
 	//
-	protected int numAttr;                            // the number of attributes in the dataset
-	protected int numInst;                            // the number of instances in the dataset
-	protected Attribute[] attrBeforeSort;        // the order of attributes before they are sorted
-	protected Attribute[] attribute;                // attributes in the dataset
-	protected String[] classAttr;                    // the class attribute
-	protected double[][] data;                     // the data matrix
+	protected int numAttr;                       // the number of attributes in the dataset
+	protected int numInst;                       // the number of instances in the dataset
+	protected Attribute[] attrBeforeSort;        // the order of attributes before sorting
+	protected Attribute[] attribute;             // attributes in the dataset
+	protected String[] classAttr;                // the class attribute
+	protected double[][] data;                   // the data matrix
 	
 	private SpearmansCorrelation sc = new SpearmansCorrelation();
 	private double[][] attrCorrelation;

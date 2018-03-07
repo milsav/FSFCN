@@ -119,12 +119,12 @@ public abstract class EvaluationBase {
 	 */
 	protected int[] cfsSelector(Instances data) throws Exception {
 		AttributeSelection attsel = new AttributeSelection();
-	    CfsSubsetEval eval = new CfsSubsetEval();
-	    BestFirst search = new BestFirst();
-	    attsel.setEvaluator(eval);
-	    attsel.setSearch(search);
-	    attsel.SelectAttributes(data);
-	    int[] indices = attsel.selectedAttributes();    
+		CfsSubsetEval eval = new CfsSubsetEval();
+		BestFirst search = new BestFirst();
+		attsel.setEvaluator(eval);
+		attsel.setSearch(search);
+		attsel.SelectAttributes(data);
+		int[] indices = attsel.selectedAttributes();    
 		return indices;
 	}
 	
@@ -158,7 +158,7 @@ public abstract class EvaluationBase {
 	 * RANKING METHODS (relieff, gainratio, information gain, pearson correlation)
 	 */
 	protected ClassifierEvaluation[] evaluateRankingMethods(Instances train, Instances test, int numAttrsToSelect) 
-			throws Exception
+		throws Exception
 	{
 		ASEvaluation[] eval = new ASEvaluation[NUM_RANKING_METHODS];
 		eval[0] = new ReliefFAttributeEval();

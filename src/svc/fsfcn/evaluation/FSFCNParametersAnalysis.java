@@ -76,20 +76,20 @@ public class FSFCNParametersAnalysis extends EvaluationBase {
 			
 			for (int n = 0; n < FOLDS; n++) {
 				Instances train = randData.trainCV(FOLDS, n);
-		        Instances test = randData.testCV(FOLDS, n);
-		        try {
-		        	ClassifierEvaluation[] ce = evaluateFSFCN(train, test, t);
-		        	for (int i = 0; i < ce.length; i++) {
-		        		accuracy[i].addValue(ce[i].getA());
-		        		precision[i].addValue(ce[i].getP());
-		        		recall[i].addValue(ce[i].getR());
-		        		numFeatures[i].addValue(ce[i].getF());
-		        		nf[i].addValue(ce[i].getF());
-		        		sf[i].addValue(ce[i].getF());
-		        	}
-		        } catch (RuntimeException re) {
-		        	stop = true;
-		        }
+				Instances test = randData.testCV(FOLDS, n);
+				try {
+					ClassifierEvaluation[] ce = evaluateFSFCN(train, test, t);
+					for (int i = 0; i < ce.length; i++) {
+		        			accuracy[i].addValue(ce[i].getA());
+		        			precision[i].addValue(ce[i].getP());
+		        			recall[i].addValue(ce[i].getR());
+		        			numFeatures[i].addValue(ce[i].getF());
+		        			nf[i].addValue(ce[i].getF());
+		        			sf[i].addValue(ce[i].getF());
+					}
+				} catch (RuntimeException re) {
+		        		stop = true;
+				}
 			}
 			
 			if (!stop) {		
