@@ -1,5 +1,5 @@
 # Graph clustering feature selection
-# svc
+# author: svc (svc@dmi.uns.ac.rs)
 # export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 
 import igraph as ig

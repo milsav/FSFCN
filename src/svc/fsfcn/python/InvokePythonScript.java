@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+/**
+ * Invoke python community detection script
+ * 
+ * @author svc (svc@dmi.uns.ac.rs)
+ */
 public class InvokePythonScript {
 	public static void main(String[] args) 
 		throws IOException, InterruptedException
