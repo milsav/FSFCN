@@ -72,7 +72,7 @@ public class FSFCN {
 	}
 	
 	public void selectFeatures() 
-			throws IOException 
+		throws IOException 
 	{
 		if (fcn == null)
 			throw new NullPointerException("[FSFCN error, selectFeatures], feature correlation network == null");
