@@ -1,5 +1,5 @@
 # Graph clustering feature selection
-# author: svc (svc@dmi.uns.ac.rs)
+# svc
 # export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 
 import igraph as ig
@@ -7,7 +7,7 @@ import math
 
 from random import randint
 
-class FCGraph(object):
+class FeatureCorrelationNetwork(object):
 	def __init__(self, inputFile):
 		self.graph = ig.Graph()
 		lines = [line.rstrip('\n') for line in open(inputFile)]
@@ -28,19 +28,19 @@ class FCGraph(object):
 		
 
 	def cluster(self, cfg_fg, cfg_lv, cfg_wt, cfg_im):
-		fg = rg.graph.community_fastgreedy("weight").as_clustering()
+		fg = self.graph.community_fastgreedy("weight").as_clustering()
 		self.__export(fg, cfg_fg + ".cl")
 		self.__attrSelectionClusterDriven(fg, cfg_fg)
 		
-		lv = rg.graph.community_multilevel("weight")
+		lv = self.graph.community_multilevel("weight")
 		self.__export(lv, cfg_lv + ".cl")
 		self.__attrSelectionClusterDriven(lv, cfg_lv)
 		
-		wt = rg.graph.community_walktrap("weight").as_clustering()
+		wt = self.graph.community_walktrap("weight").as_clustering()
 		self.__export(wt, cfg_wt + ".cl")
 		self.__attrSelectionClusterDriven(wt, cfg_wt)
 		
-		im = rg.graph.community_infomap("weight", trials = 100)
+		im = self.graph.community_infomap("weight", trials = 100)
 		self.__export(im, cfg_im + ".cl")
 		self.__attrSelectionClusterDriven(im, cfg_im)
 	
@@ -75,8 +75,8 @@ class FCGraph(object):
 	
 		
 
-fg = FCGraph("fcn.net")
-fg.cluster("fg.cfg", "lv.cfg", "wt.cfg", "im.cfg")
+fcn = FeatureCorrelationNetwork("fcn.net")
+fcn.cluster("fg.cfg", "lv.cfg", "wt.cfg", "im.cfg")
 print "OK"
 
 
